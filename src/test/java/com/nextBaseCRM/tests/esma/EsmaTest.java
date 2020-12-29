@@ -6,5 +6,7 @@ public class EsmaTest {
     public static void main(String[] args) {
         System.out.println("Hello");
         WebDriverFactory.getDriver("chrome");
+
+        System.out.println("good job Esma!");
     }
 }
