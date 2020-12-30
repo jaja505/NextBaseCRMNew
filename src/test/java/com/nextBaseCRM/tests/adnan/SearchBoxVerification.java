@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class SearchBoxVerification {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
@@ -30,6 +30,7 @@ public class SearchBoxVerification {
         WebElement searchBox = driver.findElement(By.xpath("//input[@id='search-textbox-input']"));
 
         searchBox.sendKeys("inci" + Keys.ENTER);
+        Thread.sleep(3000);
 
 
         String expectedSearch = "https://login2.nextbasecrm.com/stream/?apply_filter=Y&FIND=inci";

@@ -19,6 +19,7 @@ public class UserStory1 {
         WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         //new ChromeDriver(); //opens up the actual browser
         //new ChromeDriver();
 //===============================================================================
@@ -38,27 +39,14 @@ public class UserStory1 {
 
 //===============================================================================
         /*DOING STEP 2 OF OUR TEST EXECUTION
-​
-DATA SET:
-        POSITIVE USERNAMES:
-helpdesk51@cybertekschool.com
-helpdesk52@cybertekschool.com
-hr51@cybertekschool.com
-hr52@cybertekschool.com
-marketing51@cybertekschool.com
-marketing52@cybertekschool.com
-​
-NEGATIVE USERNAMES:
-helpdesk51cybertekschool.com
-51hr@cybertekschool.com
-marketingg51@cybertekschool.com
+
          */
-        ArrayList<String> positiveDataSet = new ArrayList<String>(Arrays.asList("helpdesk51@cybertekschool.com",
-                "helpdesk52@cybertekschool.com",
-                "hr51@cybertekschool.com",
-                "hr52@cybertekschool.com",
-                "marketing51@cybertekschool.com",
-                "marketing52@cybertekschool.com")) ;
+        ArrayList<String> positiveDataSet = new ArrayList<String>(Arrays.asList("helpdesk45@cybertekschool.com",
+                "helpdesk46@cybertekschool.com",
+                "hr45@cybertekschool.com",
+                "hr46@cybertekschool.com",
+                "marketing45@cybertekschool.com",
+                "marketing46@cybertekschool.com")) ;
 
         String password = "UserUser";
 

@@ -18,13 +18,13 @@ public class UserStory1 {
         driver.findElement(By.name("USER_LOGIN")).sendKeys("helpdesk45@cybertekschool.com");
         driver.findElement(By.name("USER_PASSWORD")).sendKeys("UserUser");
         driver.findElement(By.className("login-btn")).click();
-Thread.sleep(3000);
-        String expectedTitle="(8) Portal";
-        String actualTitle=driver.getTitle();
+        Thread.sleep(3000);
+        String expectedTitle = "(8) Portal";
+        String actualTitle = driver.getTitle();
 
-        if(actualTitle.equals(expectedTitle)){
+        if (actualTitle.equals(expectedTitle)) {
             System.out.println("Test verification PASSED");
-        }else{
+        } else {
             System.out.println("Test verification FAILED");
             System.out.println("actualResult = " + actualTitle);
             System.out.println("expectedResult = " + expectedTitle);
