@@ -19,5 +19,18 @@ public class UserStory1 {
         driver.findElement(By.name("USER_PASSWORD")).sendKeys("UserUser");
         driver.findElement(By.className("login-btn")).click();
 
+        String expectedTitle="(8) Portal";
+        String actualTitle=driver.getTitle();
+
+        if(actualTitle.equals(expectedTitle)){
+            System.out.println("Test verification PASSED");
+        }else{
+            System.out.println("Test verification FAILED");
+            System.out.println("actualResult = " + actualTitle);
+            System.out.println("expectedResult = " + expectedTitle);
+        }
+
+        driver.quit();
+
     }
 }
