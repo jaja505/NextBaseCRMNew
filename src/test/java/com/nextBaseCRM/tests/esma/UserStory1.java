@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UserStory1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver();
@@ -18,7 +18,7 @@ public class UserStory1 {
         driver.findElement(By.name("USER_LOGIN")).sendKeys("helpdesk45@cybertekschool.com");
         driver.findElement(By.name("USER_PASSWORD")).sendKeys("UserUser");
         driver.findElement(By.className("login-btn")).click();
-
+Thread.sleep(3000);
         String expectedTitle="(8) Portal";
         String actualTitle=driver.getTitle();
 
