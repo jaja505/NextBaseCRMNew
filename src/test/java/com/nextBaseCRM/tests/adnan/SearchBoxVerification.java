@@ -42,5 +42,7 @@ public class SearchBoxVerification {
             System.err.println("try again later!!!");
 
         driver.close();
+        System.out.println("Nice job Adnan :)");
+
     }
 }
