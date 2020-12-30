@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class TestAdnan {
+public class SearchBoxVerification {
     public static void main(String[] args) {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
