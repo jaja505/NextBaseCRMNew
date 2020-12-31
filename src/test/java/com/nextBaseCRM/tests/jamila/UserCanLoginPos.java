@@ -1,15 +1,16 @@
 package com.nextBaseCRM.tests.jamila;
 
+import com.nextBaseCRM.Utilities.AutomationTest;
 import com.nextBaseCRM.Utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
 
-public class UserCanLoginPos extends WebDriverFactory {
+public class UserCanLoginPos extends AutomationTest {
     public static void main(String[] args) throws InterruptedException {
         // setup driver http://login2.nextbasecrm.com/
-        WebDriver driver=getDriver("chrome");
+        WebDriver driver=driverSetUp("chrome");
         driver.get("http://login2.nextbasecrm.com/");
 
         // enter user name Username:helpdesk45@cybertekschool.com    tagName[attribute='value']
@@ -20,8 +21,11 @@ public class UserCanLoginPos extends WebDriverFactory {
 
         Thread.sleep(2000);
         // verify login successful
-        String expectedTitle="CRM 24";
+        String expectedTitle="(9) Portal";
         String actualTitle=driver.getTitle();
+
+        testResultEquals(expectedTitle,actualTitle);
+        driver.close();
 
 
 
