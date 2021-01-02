@@ -41,7 +41,8 @@ public class UserStory1 {
         /*DOING STEP 2 OF OUR TEST EXECUTION
 
          */
-        ArrayList<String> positiveDataSet = new ArrayList<String>(Arrays.asList("helpdesk45@cybertekschool.com",
+        ArrayList<String> positiveDataSet = new ArrayList<String>(Arrays.asList(
+                "helpdesk45@cybertekschool.com",
                 "helpdesk46@cybertekschool.com",
                 "hr45@cybertekschool.com",
                 "hr46@cybertekschool.com",
