@@ -17,7 +17,7 @@ public class UserCanLoginPos extends AutomationTest {
          driver.findElement(By.cssSelector("input[name='USER_LOGIN']")).sendKeys("helpdesk45@cybertekschool.com");
         //enter password Password:UserUser
         driver.findElement(By.cssSelector("input[name='USER_PASSWORD']")).sendKeys("UserUser");
-        driver.findElement(By.cssSelector("#Log In")).click();
+        driver.findElement(By.cssSelector(".login-btn")).click();
 
         Thread.sleep(2000);
         // verify login successful
@@ -26,10 +26,5 @@ public class UserCanLoginPos extends AutomationTest {
 
         testResultEquals(expectedTitle,actualTitle);
         driver.close();
-
-
-
-
     }
-
 }
