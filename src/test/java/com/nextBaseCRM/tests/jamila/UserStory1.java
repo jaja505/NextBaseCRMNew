@@ -1,13 +1,12 @@
 package com.nextBaseCRM.tests.jamila;
 
 import com.nextBaseCRM.Utilities.AutomationTest;
-import com.nextBaseCRM.Utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
 
-public class UserCanLoginPos extends AutomationTest {
+public class UserStory1 extends AutomationTest {
     public static void main(String[] args) throws InterruptedException {
         // setup driver http://login2.nextbasecrm.com/
         WebDriver driver=driverSetUp("chrome");
@@ -17,9 +16,13 @@ public class UserCanLoginPos extends AutomationTest {
          driver.findElement(By.cssSelector("input[name='USER_LOGIN']")).sendKeys("helpdesk45@cybertekschool.com");
         //enter password Password:UserUser
         driver.findElement(By.cssSelector("input[name='USER_PASSWORD']")).sendKeys("UserUser");
-        driver.findElement(By.cssSelector(".login-btn")).click();
-
         Thread.sleep(2000);
+
+        // verify the user can click the remember me bottom
+        driver.findElement(By.cssSelector("input[id='USER_REMEMBER']")).click();
+        Thread.sleep(2000);
+        // verify the user can click login
+        driver.findElement(By.cssSelector(".login-btn")).click();
         // verify login successful
         String expectedTitle="(9) Portal";
         String actualTitle=driver.getTitle();
