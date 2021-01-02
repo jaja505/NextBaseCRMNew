@@ -14,7 +14,7 @@ public class AutomationTest {public static WebDriver driverSetUp(String browserN
         return new ChromeDriver();
     }else if(browserName.equalsIgnoreCase("safari")){
         return new SafariDriver();
-    }else if(browserName.equalsIgnoreCase("fire fox")){
+    }else if(browserName.equalsIgnoreCase("firefox")){
         return new FirefoxDriver();
     }else if(browserName.equalsIgnoreCase("edge")){
         return new EdgeDriver();
