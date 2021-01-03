@@ -15,7 +15,8 @@ public class UserStory1 {
 
         driver.get("https://login2.nextbasecrm.com");
 
-        driver.findElement(By.name("USER_LOGIN")).sendKeys("helpdesk45@cybertekschool.com");
+        driver.findElement(By.name("USER_LOGIN")).
+                sendKeys("helpdesk45@cybertekschool.com");
         driver.findElement(By.name("USER_PASSWORD")).sendKeys("UserUser");
         driver.findElement(By.className("login-btn")).click();
         Thread.sleep(3000);
