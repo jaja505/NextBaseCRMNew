@@ -1,12 +1,12 @@
 package com.nextBaseCRM.tests.adnan;
 
-import com.nextBaseCRM.Utilities.WebDriverFactory;
+import com.nextBaseCRM.Utilities.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class SearchBoxVerification {
+public class UserStory3 {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
@@ -33,14 +33,17 @@ public class SearchBoxVerification {
         Thread.sleep(3000);
 
 
-        String expectedSearch = "https://login2.nextbasecrm.com/stream/?apply_filter=Y&FIND=inci";
+        String expectedText = "hi guys! this is inci testing )";
 
-        String actualSearch = driver.getCurrentUrl();
+        String actualText = driver.findElement(By.xpath("//div[@class='feed-post-text-block-inner-inner']")).getText();
 
-        if (actualSearch.equalsIgnoreCase(expectedSearch))
+        if (actualText.equalsIgnoreCase(expectedText))
             System.out.println("test is passed");
         else
             System.err.println("try again later!!!");
+        System.out.println("expected text is: " + expectedText);
+        System.out.println("Actual text is: " + actualText);
+
 
         driver.close();
         System.out.println("Nice job Adnan :)");
