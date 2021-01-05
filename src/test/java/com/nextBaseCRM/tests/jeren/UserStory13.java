@@ -1,11 +1,12 @@
 package com.nextBaseCRM.tests.jeren;
 
+import com.nextBaseCRM.Utilities.AutomationTest;
 import com.nextBaseCRM.Utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class UserStory13 {
+public class UserStory13 extends AutomationTest {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("https://nextbasecrm.com/");
@@ -26,18 +27,11 @@ public class UserStory13 {
         profile.click();
         WebElement logOut = driver.findElement(By.linkText("Log out"));
         logOut.click();
-//        Thread.sleep(5000);
-//        String expectedResult = "Authorization";
-//        String actualResult = driver.getTitle();
-//
-//        if (actualResult.equalsIgnoreCase(expectedResult)){
-//            System.out.println("PASSED!");
-//        }else {
-//            System.out.println("Failed!!!");
-//            System.out.println("expectedResult = " + expectedResult);
-//            System.out.println("actualResult = " + actualResult);
-//        }
+        Thread.sleep(5000);
 
+        testResultEquals("Authorization",driver.getTitle());
+
+        driver.close();
 
     }
 }
