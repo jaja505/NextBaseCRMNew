@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Credentials {
-
+//***the class is holding credentials for HR helpdesk and marketing.***
     private static ArrayList<String> userNameHR, userNameMarketing, userNameHelpDesk;
+    //there is only one password for all so only string
     private static String passwordAll;
-
+// ***because the usernames will not change I declared them static and initialized them***
     static {
         userNameHR = new ArrayList<>(Arrays.asList("hr45@cybertekschool.com", "hr46@cybertekschool.com"));
         userNameMarketing = new ArrayList<>(Arrays.asList("marketing45@cybertekschool.com", "marketing46@cybertekschool.com"));
@@ -15,7 +16,7 @@ public class Credentials {
         passwordAll = "UserUser";
     }
 
-
+//***getting and setting usernames for all***
     public static ArrayList<String> getUserNameHR() {
         return userNameHR;
     }
@@ -47,6 +48,7 @@ public class Credentials {
     public static void setPasswordAll(String passwordAll) {
         Credentials.passwordAll = passwordAll;
     }
+    //***adding new usernames to the arraylist for hr marketing and helpdesk***
     public static void addUserNameHR(String userName){
         userNameHR.add(userName);
     }

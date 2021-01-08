@@ -8,57 +8,56 @@ import org.openqa.selenium.WebElement;
 
 public class helpDeskNegative {
     public static void main(String[] args) {
-        //NEGATIVE TEST CASE FOR HELPDESK USER
-
-//select Chrome driver and login to the NextBaseCRM page with ID and password
-        WebDriver driver = LogInToNextBaseCRM.login("helpdesk60@cybertekschool.com", "UserUser");
-//active stream button is displayed or not if displayed throw exception and handle it
-        WebElement ActivityStreamButton = driver.findElement(By.xpath("//*[@id=\"bx_left_menu_menu_live_feed\"]/a/span[1]"));
-        WebDriverFactory.isNotDisplayed(ActivityStreamButton);
-
-        //tasks Button is displayed or not if displayed throw exception and handle it
-        WebElement TaskButton = driver.findElement(By.linkText("Tasks"));
-        WebDriverFactory.isNotDisplayed(TaskButton);
-
-//Chat and Calls Button is displayed or not if displayed throw exception and handle it
-        WebElement ChatAndCallsButton = driver.findElement(By.linkText("Chat and Calls"));
-        WebDriverFactory.isNotDisplayed(ChatAndCallsButton);
-
-//Work groups  Button is displayed or not if displayed throw exception and handle it
-        WebElement WorkgroupsButton = driver.findElement(By.linkText("Workgroups"));
-        WebDriverFactory.isNotDisplayed(WorkgroupsButton);
-
-        WebElement driveButton = driver.findElement(By.linkText("Drive"));
-        WebDriverFactory.isNotDisplayed(driveButton);
-
-        WebElement calenderButton = driver.findElement(By.xpath("//*[@id='bx_left_menu_menu_calendar']/a"));
-        WebDriverFactory.isNotDisplayed(calenderButton);
-
-        WebElement mailButton = driver.findElement(By.xpath("//a[@href='/mail/']"));
-        WebDriverFactory.isNotDisplayed(mailButton);
-
-        WebElement contactCenterButton = driver.findElement(By.xpath("//*[@id='bx_left_menu_menu_contact_center']/a"));
-        WebDriverFactory.isNotDisplayed(contactCenterButton);
-
-        WebElement timeReportsButton = driver.findElement(By.xpath("//*[@id='bx_left_menu_menu_timeman_sect']/a"));
-        WebDriverFactory.isNotDisplayed(timeReportsButton);
-
-        WebElement employeesButton = driver.findElement(By.linkText("Employees"));
-        WebDriverFactory.isNotDisplayed(employeesButton);
-
-        WebElement servicesButton = driver.findElement(By.linkText("Services"));
-        WebDriverFactory.isNotDisplayed(servicesButton);
-
-        WebElement companyButton = driver.findElement(By.linkText("Company"));
-        WebDriverFactory.isNotDisplayed(companyButton);
-
-        WebElement moreButton = driver.findElement(By.xpath("//*[@id='left-menu-more-btn']/span"));
-        WebDriverFactory.isNotDisplayed(moreButton);
-        WebDriverFactory.sleep(3);
 
 
-        driver.close();
+        String username = "helpdesk";
+        int userNumber = 45;
+// ***for looking each element in the arraylist of usernames created a loop***
+        for (int i = 0; i < 2; i++) {
+            //*** takes the index number and username above to login
+            // and we assign the driver of main module to the driver here to use ***
+            mainModuleButtons mainModuleButtons = new mainModuleButtons(i, username);
+            WebDriver driver = mainModuleButtons.driver;
+//***  uses isDisplay method and webelements in main module classes to check is for the that specific users***
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.activityStreamButton, username + " " + userNumber);
 
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.taskButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.calenderButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.chatAndCallsButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.workgroupsButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.driveButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.mailButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.contactCenterButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.contactCenterButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.timeReportsButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.employeesButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.servicesButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.companyButton, username + " " + userNumber);
+
+            WebDriverFactory.isNotDisplayed(mainModuleButtons.moreButton, username + " " + userNumber);
+
+            driver.findElement(By.className("user-name")).click();//getting to the logout link
+            WebDriverFactory.sleep(2);
+            driver.findElement(By.linkText("Log out")).click();//the actual log out link
+            WebDriverFactory.sleep(2);//sleep for smoother run
+
+            driver.findElement(By.className("login-inp")).clear();
+            userNumber++;
+            driver.quit();
+
+        }
     }
+
 
 }
