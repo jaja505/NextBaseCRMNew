@@ -8,7 +8,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class WebDriverFactory {
     public static WebDriver getDriver(String browserType) {
-        WebDriver driver = null;
         if (browserType.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
