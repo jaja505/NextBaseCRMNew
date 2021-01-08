@@ -28,11 +28,13 @@ public class AutomationTest {
 
     public static void testResultEquals(String expectedResult, String actualResult) {
         if (actualResult.equals(expectedResult)) {
-            System.out.println("Test passed");
+            System.out.println("expectedResult = " + expectedResult);
+            System.out.println("actualResult = " + actualResult);
+            System.out.println("Test PASSED");
         } else {
             System.out.println("expectedResult = " + expectedResult);
             System.out.println("actualResult = " + actualResult);
-            System.out.println("Test Failed!");
+            System.out.println("Test FAILED!");
         }
     }
 }
