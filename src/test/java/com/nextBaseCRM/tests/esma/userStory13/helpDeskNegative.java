@@ -1,10 +1,8 @@
 package com.nextBaseCRM.tests.esma.userStory13;
 
-import com.nextBaseCRM.tests.esma.utilities.LogInToNextBaseCRM;
 import com.nextBaseCRM.tests.esma.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class helpDeskNegative {
     public static void main(String[] args) {
