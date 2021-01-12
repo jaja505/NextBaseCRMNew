@@ -1,5 +1,6 @@
-package com.nextBaseCRM.tests.esma.utilities;
+package com.nextBaseCRM.Utilities;
 
+import com.nextBaseCRM.tests.esma.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,7 +14,7 @@ public class LogInToNextBaseCRM {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get("https://login2.nextbasecrm.com/");
         driver.findElement(By.cssSelector("input[name='USER_LOGIN']")).sendKeys(userName);
-        WebDriverFactory.sleep(3);
+        com.nextBaseCRM.tests.esma.utilities.WebDriverFactory.sleep(3);
         driver.findElement(By.cssSelector("input[type='password']")).sendKeys(password);
 
         WebDriverFactory.sleep(3);

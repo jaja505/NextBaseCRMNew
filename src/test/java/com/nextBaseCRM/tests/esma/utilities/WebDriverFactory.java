@@ -44,7 +44,7 @@ public class WebDriverFactory {
             e.printStackTrace();
         }
     }
-    //***to check any element if it is displayed***
+    //***to check any element if it is NOT displayed***
 
     public static void isNotDisplayed(WebElement element,String user){
         if (!element.isDisplayed()){
@@ -53,7 +53,7 @@ public class WebDriverFactory {
             System.err.println("TEST FAILED!! "+ element.getText()+" Button can be seen by helpDesk");
         }
     }
-    //***to check any element if it is NOT displayed***
+    //***to check any element if it is  displayed***
     public static void isDisplayed(WebElement element, String user){
         if (element.isDisplayed()){
             System.out.println("TEST PASSED!! " + element.getText()+" can be seen by "+ user);
