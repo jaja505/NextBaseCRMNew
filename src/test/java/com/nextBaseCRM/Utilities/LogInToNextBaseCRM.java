@@ -1,5 +1,6 @@
 package com.nextBaseCRM.Utilities;
 
+import com.nextBaseCRM.tests.esma.userStory13.mainModuleButtons;
 import com.nextBaseCRM.tests.esma.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 public class LogInToNextBaseCRM {
 
-//***this class is for loging in with username and password. It returns a WEBDRIVER so that we can use later on***
-    public static WebDriver login(String userName, String password) {
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+    //***this class is for loging in with username and password. It returns a WEBDRIVER so that we can use later on***
+    public static void login(String userName, String password,WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get("https://login2.nextbasecrm.com/");
         driver.findElement(By.cssSelector("input[name='USER_LOGIN']")).sendKeys(userName);
@@ -20,8 +20,10 @@ public class LogInToNextBaseCRM {
         WebDriverFactory.sleep(3);
         driver.findElement(By.cssSelector("input[value='Log In']")).click();
 
-        return driver;
+
     }
+
+
 
 
 }

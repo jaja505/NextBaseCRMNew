@@ -25,7 +25,7 @@ public class timeReporting {
 
     @BeforeClass
     public void setUp() {
-        driver = LogInToNextBaseCRM.login(Credentials.getUserNameHR().get(0), Credentials.getPasswordAll());
+        LogInToNextBaseCRM.login(Credentials.getUserNameHR().get(0), Credentials.getPasswordAll(),driver);
     }
 
     @Test

@@ -1,5 +1,6 @@
 package com.nextBaseCRM.tests.esma.userStory13;
 
+import com.nextBaseCRM.Utilities.LogInToNextBaseCRM;
 import com.nextBaseCRM.tests.esma.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,14 +9,15 @@ public class hr_marketing_PositiveTest {
     public static void main(String[] args) {
         //to make it easier used username string easy to change later on
 
-        String username = "marketing";
+
         int userNumber= 45;
+        WebDriver driver=WebDriverFactory.getDriver("chrome");
 // ***for looking each element in the arraylist of usernames created a loop***
         for (int i = 0; i < 2; i++) {
             //*** takes the index number and username above to login
             // and we assign the driver of main module to the driver here to use ***
-            mainModuleButtons mainModuleButtons = new mainModuleButtons(i, username);
-            WebDriver driver = mainModuleButtons.driver;
+            String username = Credentials.getUserNameHR().get(i);
+            LogInToNextBaseCRM.login(username,Credentials.getPasswordAll(),driver);
 //***  uses isDisplay method and webelements in main module classes to check is for the that specific users***
             WebDriverFactory.isDisplayed(mainModuleButtons.activityStreamButton, username+" "+userNumber);
 
