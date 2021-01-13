@@ -28,7 +28,7 @@ WebDriver driver;
     public void test1() {
 
         for (WebElement each : mainModuleButtons.mainModule(driver)) {
-            WebDriverFactory.isDisplayed(each,"marketing");
+            Assert.assertTrue(each.isDisplayed());
         }
 
     }
