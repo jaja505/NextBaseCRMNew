@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import java.util.concurrent.TimeUnit;
 
 
-public class LogInToNextBaseCRM {
+public class LogIn_LogOut_CRM {
     public  static int i;
     //***this class is for loging in with username and password. It returns a WEBDRIVER so that we can use later on***
     public static void login(String userName, String password,WebDriver driver) {

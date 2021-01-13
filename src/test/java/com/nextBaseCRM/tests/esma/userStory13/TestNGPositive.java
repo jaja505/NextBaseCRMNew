@@ -1,17 +1,13 @@
 package com.nextBaseCRM.tests.esma.userStory13;
 
-import com.nextBaseCRM.Utilities.LogInToNextBaseCRM;
+import com.nextBaseCRM.Utilities.LogIn_LogOut_CRM;
 import com.nextBaseCRM.Utilities.WebDriverFactory;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TestNGPositive {
 WebDriver driver;
@@ -21,7 +17,7 @@ int i;
     public void setUp() {
        driver= WebDriverFactory.getDriver("chrome");
 
-        LogInToNextBaseCRM.login(Credentials.getUserNameMarketing_HR().get(i++), Credentials.getPasswordAll(),driver);
+        LogIn_LogOut_CRM.login(Credentials.getUserNameMarketing_HR().get(i++), Credentials.getPasswordAll(),driver);
 
     }
 
@@ -60,6 +56,6 @@ int i;
 
     @AfterMethod
     public void teardown(){
-        LogInToNextBaseCRM.logOut(driver);
+        LogIn_LogOut_CRM.logOut(driver);
     }
 }

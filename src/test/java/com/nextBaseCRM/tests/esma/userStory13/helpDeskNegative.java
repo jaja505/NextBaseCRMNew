@@ -1,6 +1,6 @@
 package com.nextBaseCRM.tests.esma.userStory13;
 
-import com.nextBaseCRM.Utilities.LogInToNextBaseCRM;
+import com.nextBaseCRM.Utilities.LogIn_LogOut_CRM;
 import com.nextBaseCRM.tests.esma.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ public class helpDeskNegative {
             //*** takes the index number and username above to login
             // and we assign the driver of main module to the driver here to use ***
             String username = Credentials.getUserNameHR().get(i);
-            LogInToNextBaseCRM.login(username,Credentials.getPasswordAll(),driver);
+            LogIn_LogOut_CRM.login(username,Credentials.getPasswordAll(),driver);
 
 //***  uses isDisplay method and webelements in main module classes to check is for the that specific users***
             WebDriverFactory.isNotDisplayed(mainModuleButtons.activityStreamButton, username + " " + userNumber);
