@@ -1,6 +1,6 @@
 package com.nextBaseCRM.tests.esma.UserStory6;
 
-import com.nextBaseCRM.Utilities.LogInToNextBaseCRM;
+import com.nextBaseCRM.Utilities.LogIn_LogOut_CRM;
 import com.nextBaseCRM.tests.esma.userStory13.Credentials;
 import com.nextBaseCRM.tests.esma.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -11,7 +11,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.nextBaseCRM.tests.esma.userStory13.mainModuleButtons;
 public class timeReporting {
     /*
     "1. Verify users can clock in
@@ -25,7 +24,7 @@ public class timeReporting {
 
     @BeforeClass
     public void setUp() {
-        driver = LogInToNextBaseCRM.login(Credentials.getUserNameHR().get(0), Credentials.getPasswordAll());
+        LogIn_LogOut_CRM.login(Credentials.getUserNameHR().get(0), Credentials.getPasswordAll(),driver);
     }
 
     @Test
@@ -53,6 +52,7 @@ public class timeReporting {
         String expectedTimeBoxStatus="CLOCKED OUT";
         String actualTimeBoxStatus=driver.findElement(By.id("timeman-status")).getText();
         Assert.assertEquals(actualTimeBoxStatus,expectedTimeBoxStatus);
+        //hello
 
 
 

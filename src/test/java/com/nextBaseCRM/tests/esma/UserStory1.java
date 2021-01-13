@@ -68,6 +68,8 @@ public class UserStory1 {
 
             driver.findElement(By.className("login-inp")).clear();
         }
+
+
         System.out.println("All passed");
         driver.quit();
 
