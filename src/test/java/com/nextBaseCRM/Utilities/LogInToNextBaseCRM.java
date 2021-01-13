@@ -7,8 +7,9 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class LogInToNextBaseCRM {
 
+public class LogInToNextBaseCRM {
+    public  static int i;
     //***this class is for loging in with username and password. It returns a WEBDRIVER so that we can use later on***
     public static void login(String userName, String password,WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -21,6 +22,16 @@ public class LogInToNextBaseCRM {
         driver.findElement(By.cssSelector("input[value='Log In']")).click();
 
 
+    }
+    public static void logOut(WebDriver driver){
+        driver.findElement(By.className("user-name")).click();//getting to the logout link
+        WebDriverFactory.sleep(2);
+        driver.findElement(By.linkText("Log out")).click();//the actual log out link
+        WebDriverFactory.sleep(2);//sleep for smoother run
+
+        driver.findElement(By.className("login-inp")).clear();
+
+        driver.quit();
     }
 
 

@@ -26,9 +26,7 @@ public class mainModuleButtons {
     public static WebElement servicesButton;
     public static WebElement companyButton;
     public static WebElement moreButton;
-    public static WebElement timeBox;
-    public static WebElement clockInButton;
-    public static String actualTimeBoxStatus;
+
 
     public static List<WebElement> mainModule(WebDriver driver) {
 

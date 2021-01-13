@@ -15,25 +15,51 @@ import java.util.List;
 
 public class TestNGPositive {
 WebDriver driver;
+int i;
 
     @BeforeMethod
     public void setUp() {
        driver= WebDriverFactory.getDriver("chrome");
-        int i = 1;
-        LogInToNextBaseCRM.login(Credentials.getUserNameMarketing().get(i), Credentials.getPasswordAll(),driver);
-        i++;
+
+        LogInToNextBaseCRM.login(Credentials.getUserNameMarketing_HR().get(i++), Credentials.getPasswordAll(),driver);
+
     }
 
     @Test
-    public void test1() {
+    public void testHR1() {
 
         for (WebElement each : mainModuleButtons.mainModule(driver)) {
             Assert.assertTrue(each.isDisplayed());
         }
 
     }
+    @Test
+    public void testHR2() {
+
+        for (WebElement each : mainModuleButtons.mainModule(driver)) {
+            Assert.assertTrue(each.isDisplayed());
+        }
+
+    }
+    @Test
+    public void testMAR1() {
+
+        for (WebElement each : mainModuleButtons.mainModule(driver)) {
+            Assert.assertTrue(each.isDisplayed());
+        }
+
+    }
+    @Test
+    public void testMAR2() {
+
+        for (WebElement each : mainModuleButtons.mainModule(driver)) {
+            Assert.assertTrue(each.isDisplayed());
+        }
+
+    }
+
     @AfterMethod
     public void teardown(){
-        driver.quit();
+        LogInToNextBaseCRM.logOut(driver);
     }
 }

@@ -14,6 +14,7 @@ public class Credentials {
         userNameMarketing = new ArrayList<>(Arrays.asList("marketing45@cybertekschool.com", "marketing46@cybertekschool.com"));
         userNameHelpDesk = new ArrayList<>(Arrays.asList("helpdesk45@cybertekschool.com", "helpdesk46@cybertekschool.com"));
         passwordAll = "UserUser";
+        userNameMarketing_HR = new ArrayList<> (Arrays.asList("hr45@cybertekschool.com", "hr46@cybertekschool.com","marketing45@cybertekschool.com", "marketing46@cybertekschool.com"));
 
     }
 
