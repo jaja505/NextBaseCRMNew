@@ -25,6 +25,15 @@ public class WebDriverFactory {
 
 
     }
+//sleep method with try catch
+    public static void sleep(long second) {
+        try {
+            Thread.sleep(second * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void isNotDisplayed(WebElement element, String user){
         if (!element.isDisplayed()){
             System.out.println("TEST PASSED!! " + element.getText()+" cannot be seen by helpDesk");
