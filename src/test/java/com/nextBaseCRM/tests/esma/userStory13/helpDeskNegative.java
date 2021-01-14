@@ -23,7 +23,7 @@ public class helpDeskNegative {
     }
 
     @Test
-    public void testHR1() {
+    public void HelpDesk1() {
 
         for (WebElement each : mainModuleButtons.mainModule(driver)) {
             Assert.assertFalse(each.isDisplayed());
@@ -31,7 +31,7 @@ public class helpDeskNegative {
 
     }
     @Test
-    public void testHR2() {
+    public void HelpDesk2() {
 
         for (WebElement each : mainModuleButtons.mainModule(driver)) {
             Assert.assertFalse(each.isDisplayed());
