@@ -14,6 +14,7 @@ public class LogIn_LogOut_CRM {
     public static void login(String userName, String password,WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get("https://login2.nextbasecrm.com/");
+        driver.findElement(By.className("login-inp")).clear();
         driver.findElement(By.cssSelector("input[name='USER_LOGIN']")).sendKeys(userName);
         com.nextBaseCRM.tests.esma.utilities.WebDriverFactory.sleep(3);
         driver.findElement(By.cssSelector("input[type='password']")).sendKeys(password);
@@ -31,7 +32,7 @@ public class LogIn_LogOut_CRM {
 
         driver.findElement(By.className("login-inp")).clear();
 
-        driver.quit();
+        //driver.quit();
     }
 
 
