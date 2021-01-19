@@ -25,6 +25,7 @@ int i;
     public void testHR1() {
 
         for (WebElement each : mainModuleButtons.mainModule(driver)) {
+            String str= each.getText();
             Assert.assertTrue(each.isDisplayed());
         }
 

@@ -30,18 +30,18 @@ public class mainModuleButtons {
     public static List<WebElement> mainModule(WebDriver driver) {
 
         WebElement activityStreamButton = driver.findElement(By.xpath("//a[@title='Activity Stream']"));
-        WebElement taskButton = driver.findElement(By.xpath("//*[@id=\"bx_left_menu_menu_tasks\"]/a/span[1]"));
+        WebElement taskButton = driver.findElement(By.xpath("//a[@title='Tasks']"));
         WebElement chatAndCallsButton = driver.findElement(By.linkText("Chat and Calls"));
         WebElement workgroupsButton = driver.findElement(By.linkText("Workgroups"));
         WebElement driveButton = driver.findElement(By.linkText("Drive"));
-        WebElement calenderButton = driver.findElement(By.xpath("//*[@id='bx_left_menu_menu_calendar']/a"));
+        WebElement calenderButton = driver.findElement(By.xpath("//a[@id='bx_left_menu_menu_calendar']/a"));
         WebElement mailButton = driver.findElement(By.xpath("//a[@href='/mail/']"));
-        WebElement contactCenterButton = driver.findElement(By.xpath("//*[@id='bx_left_menu_menu_contact_center']/a"));
-        WebElement timeReportsButton = driver.findElement(By.xpath("//*[@id='bx_left_menu_menu_timeman_sect']/a"));
+        WebElement contactCenterButton = driver.findElement(By.xpath("//a[@id='bx_left_menu_menu_contact_center']/a"));
+        WebElement timeReportsButton = driver.findElement(By.xpath("//a[@id='bx_left_menu_menu_timeman_sect']/a"));
         WebElement employeesButton = driver.findElement(By.linkText("Employees"));
         WebElement servicesButton = driver.findElement(By.linkText("Services"));
         WebElement companyButton = driver.findElement(By.linkText("Company"));
-        WebElement moreButton = driver.findElement(By.xpath("//*[@id='left-menu-more-btn']/span"));
+        WebElement moreButton = driver.findElement(By.xpath("//a[@id='left-menu-more-btn']/span"));
 
         return new ArrayList<>(Arrays.asList(moreButton, companyButton, servicesButton, employeesButton, timeReportsButton, contactCenterButton, mailButton, calenderButton, driveButton, workgroupsButton, chatAndCallsButton, taskButton, activityStreamButton));
 
