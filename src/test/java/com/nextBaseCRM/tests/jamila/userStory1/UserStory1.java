@@ -1,6 +1,7 @@
 package com.nextBaseCRM.tests.jamila.userStory1;
 
 import com.nextBaseCRM.Utilities.LogIn_LogOut_CRM;
+import com.nextBaseCRM.tests.esma.utilities.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,8 +15,8 @@ import java.util.Arrays;
 public class UserStory1 {
     public static void main(String[] args) throws InterruptedException {
         // setup driver http://login2.nextbasecrm.com
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
 
         driver.get("http://login2.nextbasecrm.com/");
@@ -45,18 +46,25 @@ public class UserStory1 {
             //driver.findElement(By.cssSelector(".login-btn")).click();
             driver.findElement(By.xpath("//*[@value='Log In']")).click();
             Thread.sleep(2000);
-            String expectedURL = "https://login2.nextbasecrm.com/stream/";
+
+
+            String expectedURL = "https://login2.nextbasecrm.com/stream/?login=yes";
             String actualURL = driver.getCurrentUrl();
 
-            if (actualURL.contains(expectedURL)) {
-                System.out.println("Title verification is PASSED!");
+            if (actualURL.equals(expectedURL)) {
+                System.out.println("URL verification is PASSED!");
 
             } else {
-                System.out.println("Title verification is FAILED!!!");
+                System.out.println("URL verification is FAILED!!!");
                 System.out.println("actualTitle = " + actualURL);
                 System.out.println("actualTitle = " + actualURL);
             }
-            LogIn_LogOut_CRM.logOut(driver);
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//input[@name='USER_LOGIN']")).click();// getting to the logout
+            Thread.sleep(1000);
+            driver.findElement(By.linkText("Log out")).click();
+
+            driver.findElement(By.className("login-inp")).clear();
 
         }
 
