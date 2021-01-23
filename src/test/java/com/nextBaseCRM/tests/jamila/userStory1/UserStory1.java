@@ -1,4 +1,4 @@
-package com.nextBaseCRM.tests.jamila;
+package com.nextBaseCRM.tests.jamila.userStory1;
 
 import com.nextBaseCRM.Utilities.AutomationTest;
 import com.nextBaseCRM.Utilities.WebDriverFactory;
