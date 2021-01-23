@@ -69,7 +69,7 @@ public class UserStory1 {
         }
 
 
-        // verify login successful
+        System.out.println("All passed!");
 
         driver.close();
     }
