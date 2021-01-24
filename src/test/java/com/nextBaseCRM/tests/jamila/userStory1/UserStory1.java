@@ -1,12 +1,8 @@
 package com.nextBaseCRM.tests.jamila.userStory1;
 
-import com.nextBaseCRM.Utilities.LogIn_LogOut_CRM;
 import com.nextBaseCRM.tests.esma.utilities.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
