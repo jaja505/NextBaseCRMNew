@@ -4,26 +4,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPOM {
-    WebDriver driver;
+    private static WebDriver driver;
 
-    By usernameField=By.id("user");
-    By passwordField=By.id("password");
-    By loginButton=By.id("submit");
-    By forgotPassword=By.id("lost-password");
 
-    public LoginPOM(WebDriver driver) {
-        this.driver = driver;
-    }
+    static By usernameField=By.id("user");
+    static By passwordField=By.id("password");
+    static By loginButton=By.id("submit");
+    static By forgotPassword=By.id("lost-password");
 
-    public void typeUserName(String userName){
+    //public LoginPOM(WebDriver driver) {
+     //   this.driver = driver;
+    //}
+
+    public static void typeUserName(String userName){
         driver.findElement(usernameField).sendKeys(userName);
 
 
     }
-    public void typePassword(String Password){
+    public static void typePassword(String Password){
         driver.findElement(passwordField).sendKeys(Password);
     }
-    public void clickOnLoginButton(){
+    public static void clickOnLoginButton(){
         driver.findElement(loginButton).click();
     }
     public void clckOnForgotPassword(){

@@ -18,9 +18,9 @@ public class TC_LogInPage extends TestBase {
     @Test
     public void verifyValidLogin() {
         driver.get("https://app.trycloud.net/index.php/login");
-        LoginPOM login = new LoginPOM(driver);
-        login.typeUserName("user23");
-        login.typePassword("Userpass123");
-        login.clickOnLoginButton();
+        //LoginPOM login = new LoginPOM(driver);
+        LoginPOM.typeUserName("user23");
+        LoginPOM.typePassword("Userpass123");
+        LoginPOM.clickOnLoginButton();
     }
 }
