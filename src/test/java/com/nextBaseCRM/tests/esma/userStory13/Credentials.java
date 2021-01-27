@@ -4,21 +4,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Credentials {
-//***the class is holding credentials for HR helpdesk and marketing.***
-    private static ArrayList<String> userNameHR, userNameMarketing, userNameHelpDesk,userNameMarketing_HR;
+    //***the class is holding credentials for HR helpdesk and marketing.***
+    private static ArrayList<String> userNameHR, userNameMarketing, userNameHelpDesk, userNameMarketing_HR;
     //there is only one password for all so only string
     private static String passwordAll;
-// ***because the usernames will not change I declared them static and initialized them***
+
+    // ***because the usernames will not change I declared them static and initialized them***
     static {
         userNameHR = new ArrayList<>(Arrays.asList("hr45@cybertekschool.com", "hr46@cybertekschool.com"));
         userNameMarketing = new ArrayList<>(Arrays.asList("marketing45@cybertekschool.com", "marketing46@cybertekschool.com"));
         userNameHelpDesk = new ArrayList<>(Arrays.asList("helpdesk45@cybertekschool.com", "helpdesk46@cybertekschool.com"));
         passwordAll = "UserUser";
-        userNameMarketing_HR = new ArrayList<> (Arrays.asList("hr45@cybertekschool.com", "hr46@cybertekschool.com","marketing45@cybertekschool.com", "marketing46@cybertekschool.com"));
+        userNameMarketing_HR = new ArrayList<>(Arrays.asList("hr45@cybertekschool.com", "hr46@cybertekschool.com", "marketing45@cybertekschool.com", "marketing46@cybertekschool.com"));
 
     }
 
-//***getting and setting usernames for all***
+    //***getting and setting usernames for all***
     public static ArrayList<String> getUserNameHR() {
         return userNameHR;
     }
@@ -58,17 +59,19 @@ public class Credentials {
     public static void setPasswordAll(String passwordAll) {
         Credentials.passwordAll = passwordAll;
     }
+
     //***adding new usernames to the arraylist for hr marketing and helpdesk***
-    public static void addUserNameHR(String userName){
+    public static void addUserNameHR(String userName) {
         userNameHR.add(userName);
     }
-    public static void addUserNameMarketing(String userName){
+
+    public static void addUserNameMarketing(String userName) {
         userNameMarketing.add(userName);
     }
-    public static void addUserNameHelpDesk(String userName){
+
+    public static void addUserNameHelpDesk(String userName) {
         userNameHelpDesk.add(userName);
     }
-
 
 
 }

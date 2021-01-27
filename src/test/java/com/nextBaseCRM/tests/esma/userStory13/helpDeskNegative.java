@@ -1,63 +1,47 @@
 package com.nextBaseCRM.tests.esma.userStory13;
 
 import com.nextBaseCRM.Utilities.LogIn_LogOut_CRM;
-import com.nextBaseCRM.tests.esma.utilities.WebDriverFactory;
+import com.nextBaseCRM.Utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class helpDeskNegative {
-    public static void main(String[] args) {
+    WebDriver driver;
+    int i;
 
+    @BeforeMethod
+    public void setUp() {
+        driver= WebDriverFactory.getDriver("chrome");
 
-        WebDriver driver=WebDriverFactory.getDriver("chrome");
-        int userNumber = 45;
-// ***for looking each element in the arraylist of usernames created a loop***
-        for (int i = 0; i < 2; i++) {
-            //*** takes the index number and username above to login
-            // and we assign the driver of main module to the driver here to use ***
-            String username = Credentials.getUserNameHR().get(i);
-            LogIn_LogOut_CRM.login(username,Credentials.getPasswordAll(),driver);
+        LogIn_LogOut_CRM.login(Credentials.getUserNameHelpDesk().get(i++), Credentials.getPasswordAll(),driver);
 
-//***  uses isDisplay method and webelements in main module classes to check is for the that specific users***
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.activityStreamButton, username + " " + userNumber);
+    }
 
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.taskButton, username + " " + userNumber);
+    @Test
+    public void HelpDesk1() {
 
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.calenderButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.chatAndCallsButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.workgroupsButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.driveButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.mailButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.contactCenterButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.contactCenterButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.timeReportsButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.employeesButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.servicesButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.companyButton, username + " " + userNumber);
-
-            WebDriverFactory.isNotDisplayed(mainModuleButtons.moreButton, username + " " + userNumber);
-
-            driver.findElement(By.className("user-name")).click();//getting to the logout link
-            WebDriverFactory.sleep(2);
-            driver.findElement(By.linkText("Log out")).click();//the actual log out link
-            WebDriverFactory.sleep(2);//sleep for smoother run
-
-            driver.findElement(By.className("login-inp")).clear();
-            userNumber++;
-            driver.quit();
-
+        for (WebElement each : mainModuleButtons.mainModule(driver)) {
+            Assert.assertFalse(each.isDisplayed());
         }
+
+    }
+    @Test
+    public void HelpDesk2() {
+
+        for (WebElement each : mainModuleButtons.mainModule(driver)) {
+            Assert.assertFalse(each.isDisplayed());
+        }
+
     }
 
 
+    @AfterMethod
+    public void teardown(){
+        LogIn_LogOut_CRM.logOut(driver);
+    }
 }

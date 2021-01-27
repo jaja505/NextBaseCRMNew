@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class timeReporting {
     /*
-    "1. Verify users can clock in
+"1. Verify users can clock in
 2. Verify users can clock out.
 3. Verify users can edit Today's task under daily plan.
 4. Verify users can add events.
