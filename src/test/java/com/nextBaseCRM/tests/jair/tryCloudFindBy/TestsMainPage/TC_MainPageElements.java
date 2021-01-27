@@ -1,8 +1,6 @@
 package com.nextBaseCRM.tests.jair.tryCloudFindBy.TestsMainPage;
 
-import com.nextBaseCRM.tests.jair.tryCloudFindBy.TestBase;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TC_MainPageElements extends MainPagePOM {
