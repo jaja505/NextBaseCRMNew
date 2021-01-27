@@ -20,8 +20,8 @@ public class TestBase {
 
     }
 
-    @AfterMethod
-    public void tearDown(){
-        driver.close();
-    }
+    //@AfterMethod
+    //public void tearDown(){
+   //     driver.close();
+    //}
 }

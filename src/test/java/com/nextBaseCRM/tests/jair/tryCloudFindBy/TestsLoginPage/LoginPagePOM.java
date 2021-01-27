@@ -1,4 +1,4 @@
-package com.nextBaseCRM.tests.jair.tryCloudFindBy;
+package com.nextBaseCRM.tests.jair.tryCloudFindBy.TestsLoginPage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,6 +12,7 @@ public class LoginPagePOM {
     WebElement buttonLogin;
     @FindBy(id = "lost-password")
     WebElement linkForgotPassword;
+
 
     public void LogIn(String userName,String password){
         inputUserName.sendKeys(userName);
