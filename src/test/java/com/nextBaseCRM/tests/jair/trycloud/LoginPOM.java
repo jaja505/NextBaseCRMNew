@@ -1,4 +1,4 @@
-package com.nextBaseCRM.tests.jair;
+package com.nextBaseCRM.tests.jair.trycloud;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
