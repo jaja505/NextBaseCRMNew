@@ -1,4 +1,4 @@
-package com.tryCloud.tests.jair;
+package com.tryCloud.tests.mypeer;
 
 public class TestJair {
     public static void main(String[] args) {

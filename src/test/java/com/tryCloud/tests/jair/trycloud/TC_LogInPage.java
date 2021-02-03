@@ -1,6 +1,6 @@
 package com.tryCloud.tests.jair.trycloud;
 
-import com.tryCloud.tests.jair.TestBase;
+import com.tryCloud.tests.mypeer.TestBase;
 import org.testng.annotations.Test;
 
 public class TC_LogInPage extends TestBase {

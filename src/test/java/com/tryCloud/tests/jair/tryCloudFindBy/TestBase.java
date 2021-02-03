@@ -8,14 +8,14 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
-    public WebDriver driver;
+   // public WebDriver driver;
 
     @BeforeMethod
     public void setUpMethod(){
-        driver = WebDriverFactory.getDriver("chrome");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://app.trycloud.net/index.php/login");
+       // driver = WebDriverFactory.getDriver("chrome");
+        Driver.getDriver().manage().window().maximize();
+        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Driver.getDriver().get("https://app.trycloud.net/index.php/login");
 
     }
 

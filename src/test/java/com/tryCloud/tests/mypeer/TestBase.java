@@ -1,4 +1,4 @@
-package com.tryCloud.tests.jair;
+package com.tryCloud.tests.mypeer;
 
 import com.tryCloud.Utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package com.tryCloud.tests.jair;
+package com.tryCloud.tests.mypeer;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
